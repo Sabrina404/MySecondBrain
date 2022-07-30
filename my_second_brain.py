@@ -1,7 +1,24 @@
 from ast import While
 from re import S
 import re
+import sys
+from PyQt5.QtGui import QIcon 
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QApplication, QDialog 
 
+#Iniciando a parte da Interface do projeto
+
+def myBrainWindow():
+    aplicacao_instancia = QtWidgets.QApplication(sys.argv) #instanciando a  aplicação
+    janela = QtWidgets.QWidget() #precisamos criar um QtWidget, porque vamos usar isso como nossa janela de nível superior e ele tem tudo o que queremos.
+    janela.setWindowTitle('MySecond Brain') # setWindowTitle define a janela como um título
+    janela.show()  #exibindo a janela
+    sys.exit(aplicacao_instancia.exec_())  #main loop da aplicacao para ela ficar executando até sairmos dela
+
+myBrainWindow()
+
+
+#parte funcional do projeto
 
 print('Bem vindo ao seu cérebro virtual!\nMinha função é te ajudar a lembrar de coisas que você pode esquecer com o tempo.')
 
@@ -61,3 +78,4 @@ while True:
 
     if exit_or_reset.lower() == 's':
         continue
+
